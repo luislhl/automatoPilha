@@ -9,16 +9,6 @@ public class AutomatoPilha {
     Estado estadoInicial;
     ArrayList<Estado> estadosFinais;
     ArrayList<String> alfabetoPilha;
-    Stack<String> pilhaInicial;
-
-    public AutomatoPilha(Estado estadoInicial) {
-        pilhaInicial = new Stack<>();
-        alfabeto = new ArrayList<>();
-        alfabetoPilha = new ArrayList<>();
-        estados = new ArrayList<>();
-        estadosFinais = new ArrayList<>();
-        this.estadoInicial = estadoInicial;
-    }
-    
+    Stack<String> pilhaInicial; 
     
 }
