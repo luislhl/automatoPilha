@@ -2,6 +2,7 @@ package automatopilha;
 
 import java.util.ArrayList;
 //Linha comentada
+//Linha comentada 2
 public class SimuladorAutomatoPilha {
     AutomatoPilha ap;
     RequisicaoUsuario requisicaoUsuario;
