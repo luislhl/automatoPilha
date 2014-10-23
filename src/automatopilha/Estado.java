@@ -25,17 +25,3 @@ public class Estado {
         transicoes.add(new Transicao(letraInput, pilhaInput, pilhaOutput, destino));
     }
 }
-
-class Transicao{
-    String letraInput;
-    String pilhaInput;
-    String pilhaOutput;
-    Estado destino;    
-    
-    Transicao(String letraInput, String pilhaInput, String pilhaOutput, Estado destino){
-        this.letraInput = letraInput;
-        this.pilhaInput = pilhaInput;
-        this.pilhaOutput = pilhaOutput;
-        this.destino = destino;
-    }
-}
