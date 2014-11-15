@@ -1,8 +1,7 @@
 package automatopilha;
 
 import java.util.ArrayList;
-//Linha comentada 3
-//Linha comentada 2
+
 public class SimuladorAutomatoPilha {
     AutomatoPilha ap;
     RequisicaoUsuario requisicaoUsuario;
@@ -19,7 +18,7 @@ public class SimuladorAutomatoPilha {
     }
     
     public EstadoAtual computarPalavra(EstadoAtual estado){
-        if(verificarCriterioParada()){
+        if(verificarCriterioParada(estado)){
             estado.cadeiaAceita = true;
             return estado;
         }
@@ -33,5 +32,25 @@ public class SimuladorAutomatoPilha {
         while(!(listaEstados.isEmpty()) && estado.cadeiaAceita != true){
             estado = computarPalavra(estado);
         }
+    }
+    
+    private boolean verificarCriterioParada(EstadoAtual estado){
+        if (requisicaoUsuario.criterio == criterioParada.ESTADOFINAL){
+            return verificarParadaEstadoFinal(estado);
+        }
+        else if (requisicaoUsuario.criterio == criterioParada.PILHAVAZIA){
+            return verificarParadaPilhaVazia(estado);
+        }
+        else{
+            throw new AssertionError("Nunca deveria entrar aqui");
+        }
+    }
+    
+    private boolean verificarParadaEstadoFinal(EstadoAtual estado){
+        return ap.estadosFinais.contains(estado.estadoAtual);
+    }
+    
+    private boolean verificarParadaPilhaVazia(EstadoAtual estado){
+        return estado.pilhaAtual.empty();
     }
 }
