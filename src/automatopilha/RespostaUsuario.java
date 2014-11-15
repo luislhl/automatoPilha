@@ -6,10 +6,22 @@
 
 package automatopilha;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author helder
  */
 public class RespostaUsuario {
     
+    Boolean cadeiaAceita;
+    ArrayList<Estado> caminhoAceito;
+    ArrayList<Estado> logEstados;
+    
+    public RespostaUsuario(EstadoAtual estadofinal, ArrayList<Estado> logEstados){
+        this.cadeiaAceita = estadofinal.cadeiaAceita;
+        for (Log log: estadofinal.logs){
+            caminhoAceito.add(log.estado);
+        }
+    }
 }
