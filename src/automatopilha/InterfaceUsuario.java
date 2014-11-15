@@ -5,6 +5,8 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -50,8 +52,11 @@ public class InterfaceUsuario {
         Scanner in = new Scanner(System.in);
         RequisicaoUsuario req = new RequisicaoUsuario();
         
-        System.out.println("Entre com a palavra a ser computada:\n");
-        req.palavra = in.nextLine();
+        System.out.println("Entre com a palavra a ser computada, com os simbolos separados por espaço:\n");
+        String palavra = in.nextLine();
+        String[] simbolos = palavra.split(" ");
+        req.palavra = new ArrayList();
+        req.palavra.addAll(Arrays.asList(simbolos));
         System.out.println("Entre com o tempo máximo de computação:\n");
         req.tempoMaximo = in.nextInt();
         System.out.println("Escolha um critério de parada:\n1- Estado Final\n2- Pilha Vazia\n");

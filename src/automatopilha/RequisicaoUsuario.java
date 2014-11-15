@@ -1,11 +1,13 @@
 package automatopilha;
 
+import java.util.ArrayList;
+
 enum criterioParada {
     ESTADOFINAL, PILHAVAZIA;
 }
 
 public class RequisicaoUsuario { 
-    String palavra;
+    ArrayList<String> palavra;
     int tempoMaximo;
     criterioParada criterio;
     
