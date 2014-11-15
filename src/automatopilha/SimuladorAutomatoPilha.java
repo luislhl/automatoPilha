@@ -15,6 +15,8 @@ public class SimuladorAutomatoPilha {
     public RespostaUsuario executarSimulacao(){
         EstadoAtual estadoatual = new EstadoAtual(ap.estadoInicial, ap.pilhaInicial, requisicaoUsuario.palavra);
         EstadoAtual estadofinal = computarPalavra(estadoatual);
+        RespostaUsuario respostausuario = new RespostaUsuario(estadofinal, logEstados);
+        return respostausuario;
     }
     
     public EstadoAtual computarPalavra(EstadoAtual estado){

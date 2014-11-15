@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -64,7 +65,18 @@ public class InterfaceUsuario {
     }
     
     public static void interpretaResposta(RespostaUsuario resposta){
-        
+        if(resposta.cadeiaAceita){
+            System.out.println("Cadeia Aceita");
+            imprimirLogdeCaminhos(resposta.caminhoAceito);
+        }
+        else
+            System.out.println("Cadeia rejeitada");
+        imprimirLogdeCaminhos(resposta.logEstados);
     }
     
+    public static void imprimirLogdeCaminhos(ArrayList<Estado> caminho){
+        for (Estado estado : caminho){
+            System.out.print(estado.id);
+        }
+    }
 }
