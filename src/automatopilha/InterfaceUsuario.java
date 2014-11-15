@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.Scanner;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -45,7 +46,21 @@ public class InterfaceUsuario {
     }
     
     public static RequisicaoUsuario criarRequisicao(){
+        Scanner in = new Scanner(System.in);
+        RequisicaoUsuario req = new RequisicaoUsuario();
         
+        System.out.println("Entre com a palavra a ser computada:\n");
+        req.palavra = in.nextLine();
+        System.out.println("Entre com o tempo máximo de computação:\n");
+        req.tempoMaximo = in.nextInt();
+        System.out.println("Escolha um critério de parada:\n1- Estado Final\n2- Pilha Vazia\n");
+        int parada = in.nextInt();
+        
+        if(parada == 1) req.setCriterioEstadoFinal();
+        else if(parada == 2) req.setCriterioPilhaVazia();
+        else    throw new AssertionError("Opção inválida para o critério de parada");
+        
+        return req;
     }
     
     public static void interpretaResposta(RespostaUsuario resposta){
