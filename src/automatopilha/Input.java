@@ -20,8 +20,16 @@ public class Input {
         automato.estados = processaEstados();
         processaFuncaoPrograma(automato);
         automato.alfabetoPilha = processaAlfabeto(alfabetoPilha);
+        automato.pilhaInicial = processaPilhaInicial();
         
         return automato;
+    }
+    
+    private ArrayList<String> processaPilhaInicial(){
+        ArrayList<String> pilhaInicial = new ArrayList<>();
+        pilhaInicial.add(simboloInicialPilha);
+        
+        return pilhaInicial;
     }
      
     private ArrayList<String> processaAlfabeto(String alf){

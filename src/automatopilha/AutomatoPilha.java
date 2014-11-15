@@ -2,7 +2,6 @@ package automatopilha;
 
 import java.util.ArrayList;
 import java.util.Map;
-import java.util.Stack;
 
 public class AutomatoPilha {
     ArrayList<String> alfabeto;
@@ -12,6 +11,6 @@ public class AutomatoPilha {
     Estado estadoInicial;
     ArrayList<Estado> estadosFinais;
     ArrayList<String> alfabetoPilha;
-    Stack<String> pilhaInicial; 
+    ArrayList<String> pilhaInicial; 
     
 }
