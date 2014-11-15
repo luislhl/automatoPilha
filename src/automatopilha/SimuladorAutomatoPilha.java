@@ -6,6 +6,7 @@ public class SimuladorAutomatoPilha {
     AutomatoPilha ap;
     RequisicaoUsuario requisicaoUsuario;
     ArrayList<Estado> logEstados;
+    long tempoInicio;
 
     public SimuladorAutomatoPilha(AutomatoPilha ap, RequisicaoUsuario requisicaoUsuario) {
         this.ap = ap;
@@ -13,17 +14,19 @@ public class SimuladorAutomatoPilha {
     }
     
     public RespostaUsuario executarSimulacao(){
+        this.tempoInicio = System.currentTimeMillis();
         EstadoAtual estadoatual = new EstadoAtual(ap.estadoInicial, ap.pilhaInicial, requisicaoUsuario.palavra);
         EstadoAtual estadofinal = computarPalavra(estadoatual);
     }
     
     public EstadoAtual computarPalavra(EstadoAtual estado){
-        if(verificarCriterioParada(estado)){
-            estado.cadeiaAceita = true;
+        if(excedeuTempoMaximo()){
+            estado.cadeiaAceita = false;
             return estado;
         }
         
-        if(verificarLoop()){
+        if(verificarCriterioParada(estado)){
+            estado.cadeiaAceita = true;
             return estado;
         }
         
@@ -52,5 +55,11 @@ public class SimuladorAutomatoPilha {
     
     private boolean verificarParadaPilhaVazia(EstadoAtual estado){
         return estado.pilhaAtual.empty();
+    }
+    
+    private boolean excedeuTempoMaximo(){
+        long tempoAtual = System.currentTimeMillis();
+        long delta = (tempoAtual - tempoInicio)/1000;
+        return delta > requisicaoUsuario.tempoMaximo;
     }
 }
