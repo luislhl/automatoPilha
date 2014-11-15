@@ -24,4 +24,14 @@ public class Estado {
     public void addTransicao(String letraInput, String pilhaInput, String pilhaOutput, Estado destino){
         transicoes.add(new Transicao(letraInput, pilhaInput, pilhaOutput, destino));
     }
+    
+    public ArrayList<Transicao> verificarCaminhosPossiveis(String letra, String simboloPilha){
+        ArrayList<Transicao> transicoesPossiveis = new ArrayList<Transicao>();
+        for(Transicao transicao : transicoes){
+            if((transicao.letraInput.equals(letra)||transicao.letraInput.equals("&"))&&
+                    transicao.pilhaInput.equals(simboloPilha)||transicao.pilhaInput.equals("&"))
+                transicoesPossiveis.add(transicao);
+        }
+        return transicoesPossiveis;
+    }
 }

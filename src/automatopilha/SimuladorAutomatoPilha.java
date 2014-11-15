@@ -1,6 +1,7 @@
 package automatopilha;
 
 import java.util.ArrayList;
+import java.util.Stack;
 
 public class SimuladorAutomatoPilha {
     AutomatoPilha ap;
@@ -33,10 +34,17 @@ public class SimuladorAutomatoPilha {
         }
         
         // TODO Gravar estado
-        ArrayList<Estado> listaEstados = verificarCaminhosPossiveis();
-        while(!(listaEstados.isEmpty()) && estado.cadeiaAceita != true){
+        ArrayList<Transicao> listaTransicoes = estado.estadoAtual.verificarCaminhosPossiveis(estado.palavraAtual.get(0), estado.pilhaAtual.get(estado.pilhaAtual.size()-1));
+        while(!(listaTransicoes.isEmpty()) && estado.cadeiaAceita != true){
+            EstadoAtual estadoQueSeraEnviado = new EstadoAtual(estado.estadoAtual, new ArrayList<String>(estado.pilhaAtual), new ArrayList<String>(estado.palavraAtual));
+            Transicao proximaTransicao = listaTransicoes.remove(0);
+            if(!proximaTransicao.letraInput.equals("&"))
+                estado.palavraAtual.remove(0);
+            if(!proximaTransicao.pilhaInput.equals("&"))
+                
             estado = computarPalavra(estado);
         }
+        return estado;
     }
     
     private boolean verificarCriterioParada(EstadoAtual estado){
@@ -56,7 +64,7 @@ public class SimuladorAutomatoPilha {
     }
     
     private boolean verificarParadaPilhaVazia(EstadoAtual estado){
-        return estado.pilhaAtual.empty();
+        return estado.pilhaAtual.isEmpty();
     }
     
     private boolean excedeuTempoMaximo(){
