@@ -15,13 +15,14 @@ import java.util.ArrayList;
 public class RespostaUsuario {
     
     Boolean cadeiaAceita;
-    ArrayList<Estado> caminhoAceito;
+    ArrayList<Estado> caminhoAceito = new ArrayList<Estado>();
     ArrayList<Estado> logEstados;
     
     public RespostaUsuario(EstadoAtual estadofinal, ArrayList<Estado> logEstados){
+        this.logEstados = logEstados;
         this.cadeiaAceita = estadofinal.cadeiaAceita;
-        for (Log log: estadofinal.logs){
+        /*for (Log log: estadofinal.logs){
             caminhoAceito.add(log.estado);
-        }
+        }*/
     }
 }

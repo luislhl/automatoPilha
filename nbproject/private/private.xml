@@ -12,14 +12,16 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/Transicao.java</file>
             <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/Log.java</file>
-            <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/SimuladorAutomatoPilha.java</file>
             <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/InterfaceUsuario.java</file>
+            <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/SimuladorAutomatoPilha.java</file>
+            <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/Input.java</file>
             <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/RespostaUsuario.java</file>
             <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/Estado.java</file>
-            <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/EstadoAtual.java</file>
-            <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/AutomatoPilha.java</file>
             <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/input</file>
+            <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/AutomatoPilha.java</file>
+            <file>file:/C:/Users/Bruno%20Campana/Documents/NetBeansProjects/automatoPilha/src/automatopilha/EstadoAtual.java</file>
         </group>
     </open-files>
 </project-private>

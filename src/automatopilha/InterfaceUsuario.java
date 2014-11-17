@@ -25,7 +25,8 @@ public class InterfaceUsuario {
     }
     
     public static Input lerInput(){
-        File f = new File("input");
+        File f = new File("src/automatopilha/input");
+        //System.out.print(f.getAbsolutePath());
         Input input = new Input();
         try {
             FileReader fr = new FileReader(f);
